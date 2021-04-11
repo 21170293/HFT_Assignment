@@ -3,10 +3,5 @@
 
 
 
-#!/usr/bin/env python
-#coding:utf-8
-# Author:  mozman
-# Purpose: tree walker
-# Created: 07.05.2010
-# Copyright (C) 2010, 2011 by Manfred Moitzi
-# License: LGPLv3
+# Requirements:
+To ensure easy distribution and use I've tried to ensure that there are no requirements other than a standard python install. The code for the RBTrees was taken directly from the bintrees library and is implemented in pure python. This is to improve portability and ensure easy of use for all
