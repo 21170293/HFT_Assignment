@@ -3,7 +3,7 @@ if __name__ == '__main__':
     
     from LimitOrderBook import OrderBook
     
-    # Create a LOB object
+    # Create a LimitOrderBook object
     limitorderbook = OrderBook()
     
     ########### Limit Orders #############
@@ -51,7 +51,7 @@ if __name__ == '__main__':
                     'tid' : 103},
                    ]
     
-    # Add orders to LOB
+    # Add orders to LimitOrderBook
     for order in someOrders:
         trades, idNum = limitorderbook.processOrder(order, False, False)
     
@@ -65,7 +65,7 @@ if __name__ == '__main__':
                           'qty' : 2, 
                           'price' : 102,
                           'tid' : 109}
-    trades, orderInBook = limitorderbooklob.processOrder(crossingLimitOrder, False, False)
+    trades, orderInBook = limitorderbook.processOrder(crossingLimitOrder, False, False)
     print("Trade occurs as incoming bid limit crosses best ask..")
     print(trades)
     print(limitorderbook)
