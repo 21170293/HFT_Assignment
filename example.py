@@ -1,7 +1,7 @@
 
 if __name__ == '__main__':
     
-    from PyLOB import OrderBook
+    from LimitOrderBook import OrderBook
     
     # Create a LOB object
     limitorderbook = OrderBook()
@@ -56,7 +56,7 @@ if __name__ == '__main__':
         trades, idNum = limitorderbook.processOrder(order, False, False)
     
     # The current book may be viewed using a print
-    print limitorderbook
+    print(limitorderbook)
     
     # Submitting a limit order that crosses the opposing best price will 
     # result in a trade.
@@ -66,9 +66,9 @@ if __name__ == '__main__':
                           'price' : 102,
                           'tid' : 109}
     trades, orderInBook = limitorderbooklob.processOrder(crossingLimitOrder, False, False)
-    print "Trade occurs as incoming bid limit crosses best ask.."
-    print trades
-    print limitorderbook
+    print("Trade occurs as incoming bid limit crosses best ask..")
+    print(trades)
+    print(limitorderbook)
     
     # If a limit order crosses but is only partially matched, the remaining 
     # volume will be placed in the book as an outstanding order
@@ -78,9 +78,9 @@ if __name__ == '__main__':
                              'price' : 102,
                              'tid' : 110}
     trades, orderInBook = limitorderbook.processOrder(bigCrossingLimitOrder, False, False)
-    print "Large incoming bid limit crosses best ask.\
-           Remaining volume is placed in the book.."
-    print limitorderbook
+    print("Large incoming bid limit crosses best ask.\
+           Remaining volume is placed in the book..")
+    print(limitorderbook)
     
     ############# Market Orders ##############
     
@@ -91,17 +91,17 @@ if __name__ == '__main__':
                    'qty' : 40, 
                    'tid' : 111}
     trades, idNum = limitorderbook.processOrder(marketOrder, False, False)
-    print "A limit order takes the specified volume from the\
-            inside of the book, regardless of price" 
-    print "A market ask for 40 results in.."
-    print limitorderbook
+    print("A limit order takes the specified volume from the\
+            inside of the book, regardless of price")
+    print ("A market ask for 40 results in..")
+    print(imitorderbook)
     
     ############ Cancelling Orders #############
     
     # Order can be cancelled simply by submitting an order idNum and a side
-    print "cancelling bid for 5 @ 97.."
+    print("cancelling bid for 5 @ 97..")
     limitorderbook.cancelOrder('bid', 8)
-    print limitorderbook
+    print(limitorderbook)
     
     ########### Modifying Orders #############
     
@@ -111,5 +111,5 @@ if __name__ == '__main__':
                     'price' : 99,
                     'tid' : 100})
     print "book after modify..."
-    print lob
+    print(limitorderbook)
     
