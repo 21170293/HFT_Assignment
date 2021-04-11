@@ -1,9 +1,4 @@
-'''
-Created on Mar 28, 2013
 
-@author: Ash Booth
-         
-'''
 
 import sys
 import math
