@@ -1,8 +1,4 @@
-'''
-Created on Mar 22, 2013
 
-@author: Ash Booth
-'''
 
 class OrderList(object):
     def __init__(self):
@@ -48,7 +44,7 @@ class OrderList(object):
         self.volume -= order.qty
         self.length -= 1
         if len(self) == 0:
-            return
+            return 0
         # Remove from list of orders
         nextOrder = order.nextOrder
         prevOrder = order.prevOrder
