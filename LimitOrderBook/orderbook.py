@@ -3,10 +3,8 @@
 import sys
 import math
 from collections import deque
-from cStringIO import StringIO
-
 from ordertree import OrderTree
-
+from io import StringIO
 class OrderBook(object):
     def __init__(self, tick_size = 0.0001):
         self.tape = deque(maxlen=None) # Index [0] is most recent trade
