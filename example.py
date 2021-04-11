@@ -1,19 +1,10 @@
-'''
-Created on Apr 11, 2013
-
-@author: Ash Booth
-
-For a full walkthrough of PyLOB functionality and usage,
-see the wiki @ https://github.com/ab24v07/PyLOB/wiki
-
-'''
 
 if __name__ == '__main__':
     
     from PyLOB import OrderBook
     
     # Create a LOB object
-    lob = OrderBook()
+    limitorderbook = OrderBook()
     
     ########### Limit Orders #############
     
@@ -62,10 +53,10 @@ if __name__ == '__main__':
     
     # Add orders to LOB
     for order in someOrders:
-        trades, idNum = lob.processOrder(order, False, False)
+        trades, idNum = limitorderbook.processOrder(order, False, False)
     
     # The current book may be viewed using a print
-    print lob
+    print limitorderbook
     
     # Submitting a limit order that crosses the opposing best price will 
     # result in a trade.
@@ -74,10 +65,10 @@ if __name__ == '__main__':
                           'qty' : 2, 
                           'price' : 102,
                           'tid' : 109}
-    trades, orderInBook = lob.processOrder(crossingLimitOrder, False, False)
+    trades, orderInBook = limitorderbooklob.processOrder(crossingLimitOrder, False, False)
     print "Trade occurs as incoming bid limit crosses best ask.."
     print trades
-    print lob
+    print limitorderbook
     
     # If a limit order crosses but is only partially matched, the remaining 
     # volume will be placed in the book as an outstanding order
@@ -86,10 +77,10 @@ if __name__ == '__main__':
                              'qty' : 50, 
                              'price' : 102,
                              'tid' : 110}
-    trades, orderInBook = lob.processOrder(bigCrossingLimitOrder, False, False)
+    trades, orderInBook = limitorderbook.processOrder(bigCrossingLimitOrder, False, False)
     print "Large incoming bid limit crosses best ask.\
            Remaining volume is placed in the book.."
-    print lob
+    print limitorderbook
     
     ############# Market Orders ##############
     
@@ -99,23 +90,23 @@ if __name__ == '__main__':
                    'side' : 'ask', 
                    'qty' : 40, 
                    'tid' : 111}
-    trades, idNum = lob.processOrder(marketOrder, False, False)
+    trades, idNum = limitorderbook.processOrder(marketOrder, False, False)
     print "A limit order takes the specified volume from the\
             inside of the book, regardless of price" 
     print "A market ask for 40 results in.."
-    print lob
+    print limitorderbook
     
     ############ Cancelling Orders #############
     
     # Order can be cancelled simply by submitting an order idNum and a side
     print "cancelling bid for 5 @ 97.."
-    lob.cancelOrder('bid', 8)
-    print lob
+    limitorderbook.cancelOrder('bid', 8)
+    print limitorderbook
     
     ########### Modifying Orders #############
     
     # Orders can be modified by submitting a new order with an old idNum
-    lob.modifyOrder(5, {'side' : 'bid', 
+    limitorderbook.modifyOrder(5, {'side' : 'bid', 
                     'qty' : 14, 
                     'price' : 99,
                     'tid' : 100})
