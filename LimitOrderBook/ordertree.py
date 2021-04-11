@@ -1,8 +1,4 @@
-'''
-Created on Mar 27, 2013
 
-@author: Ash Booth
-'''
 
 from BinTrees import RBTree
 from orderlist import OrderList
