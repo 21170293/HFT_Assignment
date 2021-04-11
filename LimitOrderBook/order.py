@@ -1,8 +1,4 @@
-'''
-Created on Mar 20, 2013
 
-@author: Ash Booth
-'''
 
 class Order(object):
     def __init__(self, quote, orderList):
