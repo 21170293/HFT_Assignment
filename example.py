@@ -110,6 +110,6 @@ if __name__ == '__main__':
                     'qty' : 14, 
                     'price' : 99,
                     'tid' : 100})
-    print "book after modify..."
+    print("book after modify...")
     print(limitorderbook)
     
